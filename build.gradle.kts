@@ -12,6 +12,7 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application.
     application
+    `maven-publish`
 }
 
 repositories {
@@ -32,6 +33,25 @@ tasks {
     jar {
         manifest {
             attributes(mapOf("Main-Class" to main))
+        }
+    }
+}
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/Enteerman/asmtools")
+            credentials {
+                username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
+            }
+        }
+    }
+    publications {
+        register("gpr", MavenPublication::class.java) {
+            from(components["java"])
+            groupId = "me.enterman"
+            artifactId = "asmtools"
         }
     }
 }
