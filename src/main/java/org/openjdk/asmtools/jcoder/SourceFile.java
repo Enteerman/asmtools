@@ -186,7 +186,7 @@ public class SourceFile implements org.openjdk.asmtools.jasm.Constants {
     public int nwarnings;
 
     public static final I18NResourceBundle i18n
-            = I18NResourceBundle.getBundleForClass(Main.class);
+            = Main.i18n;
 
     /*
      *  Until place for jasm.properties is defind,

@@ -216,7 +216,7 @@ public class Environment {
     public int nerrors;
     public int nwarnings;
     public static final I18NResourceBundle i18n
-            = I18NResourceBundle.getBundleForClass(Main.class);
+            = Main.i18n;
 
     /**
      * Error String

@@ -56,7 +56,7 @@ class ClassData {
     private String entityName = "";
 
     public static I18NResourceBundle i18n
-            = I18NResourceBundle.getBundleForClass(Main.class);
+            = Main.i18n;
 
     ClassData(DataInputStream dis, int printFlags, PrintWriter out) throws IOException {
         byte[] buf = new byte[dis.available()];
