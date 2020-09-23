@@ -35,26 +35,12 @@ import java.util.ResourceBundle;
 public class I18NResourceBundle extends ResourceBundle {
 
     /**
-     * Get a package-specific resource bundle for a class containing localization data.
-     * The bundle is named i18n.properties in the same package as the given class.
-     *
-     * @param c the class for which to obtain the resource bundle
-     * @return the appropriate resource bundle for the class
-     */
-    public static I18NResourceBundle getBundleForClass(Class c) {
-        String cn = c.getName();
-        int dot = cn.lastIndexOf('.');
-        String rn = (dot == -1 ? "i18n" : cn.substring(0, dot) + ".i18n");
-        return new I18NResourceBundle(rn, c.getClassLoader());
-    }
-
-    /**
      * Create a resource bundle for the given name. The actual resource bundle will not be
      * loaded until it is needed.
      *
      * @param name The name of the actual resource bundle to use.
      */
-    private I18NResourceBundle(String name, ClassLoader cl) {
+    public I18NResourceBundle(String name, ClassLoader cl) {
         this.name = name;
         this.classLoader = cl;
     }

@@ -39,7 +39,7 @@ public class Main extends Tool {
     private Options options;
 
     public static final I18NResourceBundle i18n
-            = I18NResourceBundle.getBundleForClass(Main.class);
+            = new I18NResourceBundle("i18n_jdis",Main.class.getClassLoader());
 
     public  Main(PrintWriter out, PrintWriter err, String programName) {
         super(out, err, programName);

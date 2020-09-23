@@ -47,7 +47,7 @@ public class Main {
     String program;
 
     public static final I18NResourceBundle i18n
-            = I18NResourceBundle.getBundleForClass(Main.class);
+            = new I18NResourceBundle("i18n_jcdec", Main.class.getClassLoader());
     /**
      * The stream where error message are printed.
      */

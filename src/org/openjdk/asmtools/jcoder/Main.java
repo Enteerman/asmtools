@@ -37,7 +37,7 @@ import java.util.HashMap;
 public class Main extends Tool {
 
     public static final I18NResourceBundle i18n
-            = I18NResourceBundle.getBundleForClass(Main.class);
+            = new I18NResourceBundle("i18n_jcoder", Main.class.getClassLoader());
 
     public Main(PrintWriter out, String programName) {
         super(out, programName);

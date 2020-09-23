@@ -40,7 +40,7 @@ public class Main extends Tool {
     int     printFlags = 0;
 
     public static final I18NResourceBundle i18n
-            = I18NResourceBundle.getBundleForClass(Main.class);
+            = new I18NResourceBundle("i18n_jdec", Main.class.getClassLoader());
 
     public Main(PrintWriter out, PrintWriter err, String programName) {
         super(out, err, programName);

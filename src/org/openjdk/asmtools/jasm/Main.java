@@ -39,7 +39,7 @@ import java.util.ArrayList;
 public class Main extends Tool {
 
     public static final I18NResourceBundle i18n
-            = I18NResourceBundle.getBundleForClass(Main.class);
+            = new I18NResourceBundle("i18n_jasm", Main.class.getClassLoader());
 
     private File destDir = null;
     private boolean traceFlag = false;

@@ -25,14 +25,16 @@ package org.openjdk.asmtools;
 import org.openjdk.asmtools.util.I18NResourceBundle;
 import org.openjdk.asmtools.util.ProductInfo;
 
+import java.util.ResourceBundle;
+
 /**
  * Wrapper class that reads the first command line argument and invokes a corresponding
  * tool.
  */
 public class Main {
-
+    //ublic static final ResourceBundle i18n = ResourceBundle.getBundle("i18n_main");
     public static final I18NResourceBundle i18n
-            = I18NResourceBundle.getBundleForClass(Main.class);
+            = new I18NResourceBundle("i18n_main", Main.class.getClassLoader());
 
     /**
      * Parses the first argument and deligates execution to an appropriate tool
