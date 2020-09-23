@@ -242,7 +242,7 @@ public class ClassData extends MemberData {
     /**
      * Read and resolve the class data
      */
-    private void read(DataInputStream in) throws IOException {
+    public void read(DataInputStream in) throws IOException {
         // Read the header
         int magic = in.readInt();
         if (magic != JAVA_MAGIC) {
