@@ -94,7 +94,7 @@ class Parser extends ParseBase {
     /**
      * Create a parser
      */
-    protected Parser(Environment sf, CFVersion cfVersion) throws IOException {
+    public Parser(Environment sf, CFVersion cfVersion) throws IOException {
         super.init(new Scanner(sf), this, sf);
         this.currentCFV = cfVersion;
         this.annotParser = new ParserAnnotation(scanner, this, env);
