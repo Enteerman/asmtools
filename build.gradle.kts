@@ -13,6 +13,7 @@ plugins {
     // Apply the application plugin to add support for building a CLI application.
     application
     `maven-publish`
+    id("com.jfrog.bintray") version "1.8.5"
 }
 
 repositories {
@@ -48,10 +49,34 @@ publishing {
         }
     }
     publications {
-        register("gpr", MavenPublication::class.java) {
+        register<MavenPublication>("gpr") {
             from(components["java"])
             groupId = "me.enterman"
             artifactId = "asmtools"
         }
+        register<MavenPublication>("bintray") {
+            from(components["java"])
+            groupId = "me.enterman"
+            artifactId = "asmtools"
+            version = "1.0.0"
+        }
     }
+}
+fun findProperty(s: String) = project.findProperty(s) as String?
+
+bintray {
+    user = System.getenv("bintrayUser")
+    key = System.getenv("bintrayApiKey")
+    println(key)
+    // publish = true
+    setPublications("bintray")
+    pkg(delegateClosureOf<com.jfrog.bintray.gradle.BintrayExtension.PackageConfig> {
+        repo = "asmtools"
+        name = "asmtools"
+        userOrg = user
+        setLabels("asmtools")
+        version(closureOf<com.jfrog.bintray.gradle.BintrayExtension.VersionConfig> {
+            name = "1.0.0"
+        })
+    })
 }
