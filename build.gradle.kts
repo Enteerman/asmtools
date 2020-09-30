@@ -39,6 +39,7 @@ tasks {
         }
     }
 }
+val projectVersion = System.getenv("TRAVIS_TAG") ?: "unspecified"
 publishing {
 
     publications {
@@ -46,7 +47,7 @@ publishing {
             from(components["java"])
             groupId = "me.enterman"
             artifactId = "asmtools"
-            version = "1.0.1"
+            version = projectVersion
         }
     }
 }
@@ -64,7 +65,7 @@ bintray {
         userOrg = user
         setLabels("asmtools")
         version(closureOf<com.jfrog.bintray.gradle.BintrayExtension.VersionConfig> {
-            name = "1.0.0"
+            name = projectVersion
         })
     })
 }

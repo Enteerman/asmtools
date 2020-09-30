@@ -1,0 +1,7 @@
+language: java
+deploy:
+  provider: script
+  script: bash scripts/publish.sh
+  on:
+    branch: gradle
+    tags: true
