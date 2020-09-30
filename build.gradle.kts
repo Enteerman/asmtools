@@ -56,7 +56,6 @@ fun findProperty(s: String) = project.findProperty(s) as String?
 bintray {
     user = System.getenv("bintrayUser")
     key = System.getenv("bintrayApiKey")
-    println(key)
     // publish = true
     setPublications("bintray")
     pkg(delegateClosureOf<com.jfrog.bintray.gradle.BintrayExtension.PackageConfig> {
