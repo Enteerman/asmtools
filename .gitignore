@@ -6,6 +6,7 @@
 
 # Package Files
 *.jar
+!/gradle/wrapper/gradle-wrapper.jar
 *.zip
 *.tar.gz
 *.tar
