@@ -1,7 +1,11 @@
 language: java
 deploy:
   provider: script
-  script: bash scripts/publish.sh
+  script: ./gradlew bintray
   on:
     branch: gradle
     tags: true
+env:
+  global:
+    - secure: nSY/Obej2oc37lK2uR8O/jilhujOV+rDQv/RxCDa7p2cti/dd251MlRdhHokSXKB+dQDiB9El4v3NpSyS2CfoVTWqFBe0bJHMgYih31GTgsT4cB+2aPmA4bwR/YL3tLmi1KHDGGfgF8ubew4AdKoqlPtYVNHkVxOuQcrmLa4n2PZm6ekfEGWTGu6EspIOKrldhAU5zjJEH5N4E3aLkGvmf/vaKu2bGmiASAQL2gAn8Q0d9vsDpvwIj/JFkB+4DtNnfjivSyETfNJ4jTnM3uJh7/J1ppzPTF5TZi6VdpNAr/itESgEZhqZ8czCoM3kacTZHfcnVNkpamtr7udL01DKRBo2HdmC/Otzmxgs6p0oMfsDb378TJvdZ6d8ZAZKoo7CVhQPKKTX2UXBjKEbvgDTzskpsn0yafzJafeOvYCf33dI8h2/XTijvrsE4dvc7DaHXE98ldcMb5P23d6GhhNTfdPYi8EcReGaaOiK0GvPLlMxze/dLPaXEZ9wAeTnOtYIM/rhnAMNRyMkaESGonDTmekCBssvLv46PHiv9vhzZorPi1rZhcMHanwIfzhwUamqiw3cWcLiZf0ChUvOQUHowDXDCov5qw2zhFJiHIfvpbRLKjX5JWTlcw2jMrfIz4PyxGm7HRjVreN+L3RyRhHZdc5RO0S9MtUKlGBik+5s4Y=
+    - bintrayUser=enterman

@@ -43,6 +43,10 @@ publishing {
     }
 }
 
+tasks.register("bintray") {
+    dependsOn("bintrayUpload", "bintrayPublish")
+}
+
 fun findProperty(s: String) = project.findProperty(s) as String?
 
 bintray {
