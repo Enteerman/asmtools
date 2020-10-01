@@ -65,7 +65,7 @@ import static org.openjdk.asmtools.jasm.Tables.*;
  * Syntax errors, should always be caught inside the
  * parser for error recovery.
  */
-class Parser extends ParseBase {
+public class Parser extends ParseBase {
 
     /* Parser Fields */
     protected ConstantPool pool = null;
@@ -1847,7 +1847,7 @@ class Parser extends ParseBase {
         cd = null;
     }
 
-    final ClassData[] getClassesData() {
+    public final ClassData[] getClassesData() {
         return ((ClassData[]) clsDataList.toArray(new ClassData[0]));
     }
 

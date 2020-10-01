@@ -35,7 +35,7 @@ import static org.openjdk.asmtools.jasm.Tables.*;
  * renders directly to a class file.
  *
  */
-class ClassData extends MemberData {
+public class ClassData extends MemberData {
 
     /* ClassData Fields */
     CFVersion cfv;
