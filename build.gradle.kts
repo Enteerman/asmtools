@@ -52,7 +52,7 @@ fun findProperty(s: String) = project.findProperty(s) as String?
 bintray {
     user = System.getenv("bintrayUser")
     key = System.getenv("bintrayApiKey")
-    // publish = true
+    publish = true
     setPublications("bintray")
     pkg(delegateClosureOf<com.jfrog.bintray.gradle.BintrayExtension.PackageConfig> {
         repo = "asmtools"
